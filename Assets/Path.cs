@@ -32,8 +32,7 @@ public class Path
     public Vector2[] GetPointsInSegment(int i)
     {
         var result = new Vector2[4];
-        var pointList = points.ToArray();
-        Array.Copy(pointList, i * 3, result, 0, 4);
+        Array.Copy(points.ToArray(), i * 3, result, 0, 4);
         return result;
     }
 
