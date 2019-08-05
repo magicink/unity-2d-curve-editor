@@ -8,7 +8,7 @@ public class Path
     [SerializeField] [HideInInspector] private List<Vector2> points;
 
     public int TotalPoints => points.Count;
-    public int TotalSegments => points.Count % 3;
+    public int TotalSegments => points.Count / 3;
     public Vector2 this[int i] => points[i];
 
     public Path(Vector2 center)
@@ -22,7 +22,7 @@ public class Path
         };
     }
 
-    private void AddPoint(Vector2 point)
+    public void AddPoint(Vector2 point)
     {
         points.Add(points[points.Count - 1] * 2 - points[points.Count - 2]);
         points.Add((points[points.Count - 1] + point) * 0.5f);
